@@ -252,7 +252,7 @@ class WeixinBotSDKWrapper(BaseWeixinBot):
         try:
             target = group_id or user_id
             await self._bot.send_typing(target)
-        except:
+        except Exception:
             pass
     
     def _on_sdk_message(self, raw_msg):
@@ -400,7 +400,7 @@ class KimiWireClient:
                 line = await self.process.stderr.readline()
                 if line:
                     logger.debug(f"[Kimi stderr] {line.decode().strip()}")
-            except:
+            except Exception:
                 break
     
     async def _read_loop(self):
@@ -521,7 +521,7 @@ class KimiWireClient:
             self.process.terminate()
             try:
                 await asyncio.wait_for(self.process.wait(), timeout=5)
-            except:
+            except Exception:
                 self.process.kill()
             self.process = None
 
