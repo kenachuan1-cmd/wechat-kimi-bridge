@@ -1,0 +1,14 @@
+{
+  "bot_name": "Kimi",
+  "default_work_dir": ".",
+  "group_strategy": "per_group",
+  "auto_approve": false,
+  "enable_approval": true,
+  "max_image_size": 5242880,
+  "message_buffer_time": 0.5,
+  "max_message_length": 2000,
+  "allowed_groups": [],
+  "blocked_groups": [],
+  "allowed_users": [],
+  "blocked_users": []
+}

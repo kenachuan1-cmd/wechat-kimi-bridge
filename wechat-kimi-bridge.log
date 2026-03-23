@@ -1,0 +1,188 @@
+2026-03-23 15:32:03,772 - __main__ - INFO - ============================================================
+2026-03-23 15:32:03,772 - __main__ - INFO - WeChat-Kimi Bridge 启动
+2026-03-23 15:32:03,772 - __main__ - INFO - 策略: per_group
+2026-03-23 15:32:03,772 - __main__ - INFO - ============================================================
+2026-03-23 15:32:03,772 - __main__ - INFO - 登录中...
+2026-03-23 15:32:03,772 - __main__ - INFO - [Mock Bot] 模拟登录成功
+2026-03-23 15:32:03,772 - __main__ - INFO - 登录成功!
+2026-03-23 15:34:17,617 - stable - INFO - ============================================================
+2026-03-23 15:34:17,618 - stable - INFO - WeChat-Kimi Bridge 启动
+2026-03-23 15:34:17,619 - stable - INFO - 策略: per_group
+2026-03-23 15:34:17,619 - stable - INFO - ============================================================
+2026-03-23 15:34:17,619 - stable - INFO - 登录中...
+2026-03-23 15:34:17,619 - stable - INFO - [Mock Bot] 模拟登录成功
+2026-03-23 15:34:17,619 - stable - INFO - 登录成功!
+2026-03-23 15:34:17,619 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<Bridge.handle() done, defined at C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py:603> exception=AttributeError("'WeChatMessage' object has no attribute 'is_group'")>
+Traceback (most recent call last):
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 604, in handle
+    if not self.should_handle(msg):
+           ~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 599, in should_handle
+    if not msg.is_group:
+           ^^^^^^^^^^^^
+AttributeError: 'WeChatMessage' object has no attribute 'is_group'
+2026-03-23 15:34:17,622 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-3' coro=<Bridge.handle() done, defined at C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py:603> exception=AttributeError("'WeChatMessage' object has no attribute 'is_group'")>
+Traceback (most recent call last):
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 604, in handle
+    if not self.should_handle(msg):
+           ~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 599, in should_handle
+    if not msg.is_group:
+           ^^^^^^^^^^^^
+AttributeError: 'WeChatMessage' object has no attribute 'is_group'
+2026-03-23 15:34:20,621 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<Bridge.handle() done, defined at C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py:603> exception=AttributeError("'WeChatMessage' object has no attribute 'is_group'")>
+Traceback (most recent call last):
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 604, in handle
+    if not self.should_handle(msg):
+           ~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 599, in should_handle
+    if not msg.is_group:
+           ^^^^^^^^^^^^
+AttributeError: 'WeChatMessage' object has no attribute 'is_group'
+2026-03-23 15:34:20,623 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<Bridge.handle() done, defined at C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py:603> exception=AttributeError("'WeChatMessage' object has no attribute 'is_group'")>
+Traceback (most recent call last):
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 604, in handle
+    if not self.should_handle(msg):
+           ~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 599, in should_handle
+    if not msg.is_group:
+           ^^^^^^^^^^^^
+AttributeError: 'WeChatMessage' object has no attribute 'is_group'
+2026-03-23 15:34:25,625 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-6' coro=<Bridge.handle() done, defined at C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py:603> exception=AttributeError("'WeChatMessage' object has no attribute 'is_group'")>
+Traceback (most recent call last):
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 604, in handle
+    if not self.should_handle(msg):
+           ~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 599, in should_handle
+    if not msg.is_group:
+           ^^^^^^^^^^^^
+AttributeError: 'WeChatMessage' object has no attribute 'is_group'
+2026-03-23 15:34:25,626 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Bridge.handle() done, defined at C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py:603> exception=AttributeError("'WeChatMessage' object has no attribute 'is_group'")>
+Traceback (most recent call last):
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 604, in handle
+    if not self.should_handle(msg):
+           ~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 599, in should_handle
+    if not msg.is_group:
+           ^^^^^^^^^^^^
+AttributeError: 'WeChatMessage' object has no attribute 'is_group'
+2026-03-23 15:34:27,635 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-8' coro=<Bridge.handle() done, defined at C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py:603> exception=AttributeError("'WeChatMessage' object has no attribute 'is_group'")>
+Traceback (most recent call last):
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 604, in handle
+    if not self.should_handle(msg):
+           ~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 599, in should_handle
+    if not msg.is_group:
+           ^^^^^^^^^^^^
+AttributeError: 'WeChatMessage' object has no attribute 'is_group'
+2026-03-23 15:34:27,636 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-9' coro=<Bridge.handle() done, defined at C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py:603> exception=AttributeError("'WeChatMessage' object has no attribute 'is_group'")>
+Traceback (most recent call last):
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 604, in handle
+    if not self.should_handle(msg):
+           ~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\lenovo\wechat-kimi-project\wechat-kimi-bridge-stable.py", line 599, in should_handle
+    if not msg.is_group:
+           ^^^^^^^^^^^^
+AttributeError: 'WeChatMessage' object has no attribute 'is_group'
+2026-03-23 15:35:06,024 - stable - INFO - ============================================================
+2026-03-23 15:35:06,024 - stable - INFO - WeChat-Kimi Bridge 启动
+2026-03-23 15:35:06,024 - stable - INFO - 策略: per_group
+2026-03-23 15:35:06,024 - stable - INFO - ============================================================
+2026-03-23 15:35:06,024 - stable - INFO - 登录中...
+2026-03-23 15:35:06,024 - stable - INFO - [Mock Bot] 模拟登录成功
+2026-03-23 15:35:06,024 - stable - INFO - 登录成功!
+2026-03-23 15:35:06,025 - stable - INFO - 新建会话: p:user_1
+2026-03-23 15:35:06,025 - stable - INFO - 启动 Kimi: kimi --wire -w . --continue --yolo
+2026-03-23 15:35:06,040 - stable - ERROR - 发送失败: Kimi 未运行
+2026-03-23 15:35:08,014 - stable - INFO - Kimi 进程退出
+2026-03-23 15:41:01,898 - __main__ - INFO - ============================================================
+2026-03-23 15:41:01,899 - __main__ - INFO - WeChat-Kimi Bridge 启动
+2026-03-23 15:41:01,899 - __main__ - INFO - 策略: per_group
+2026-03-23 15:41:01,899 - __main__ - INFO - ============================================================
+2026-03-23 15:41:01,899 - __main__ - INFO - 登录中...
+2026-03-23 15:41:01,899 - __main__ - INFO - 启动登录线程...
+2026-03-23 15:42:12,834 - __main__ - ERROR - 登录失败: [Errno 22] Invalid argument
+2026-03-23 15:42:12,835 - __main__ - ERROR - 登录失败
+2026-03-23 15:42:50,542 - stable - INFO - 启动登录线程...
+2026-03-23 16:28:55,115 - __main__ - INFO - ============================================================
+2026-03-23 16:28:55,116 - __main__ - INFO - WeChat-Kimi Bridge 启动
+2026-03-23 16:28:55,116 - __main__ - INFO - 策略: per_group
+2026-03-23 16:28:55,116 - __main__ - INFO - ============================================================
+2026-03-23 16:28:55,116 - __main__ - INFO - 登录中...
+2026-03-23 16:28:55,116 - __main__ - INFO - 启动登录线程...
+2026-03-23 16:34:53,492 - __main__ - ERROR - 登录失败: 
+2026-03-23 16:34:53,493 - __main__ - ERROR - 登录失败
+2026-03-23 16:55:20,480 - __main__ - INFO - ============================================================
+2026-03-23 16:55:20,480 - __main__ - INFO - WeChat-Kimi Bridge 启动
+2026-03-23 16:55:20,480 - __main__ - INFO - 策略: per_group
+2026-03-23 16:55:20,480 - __main__ - INFO - ============================================================
+2026-03-23 16:55:20,480 - __main__ - INFO - 登录中...
+2026-03-23 16:55:20,480 - __main__ - INFO - [Mock Bot] 模拟登录成功
+2026-03-23 16:55:20,480 - __main__ - INFO - 登录成功!
+2026-03-23 16:58:02,618 - __main__ - INFO - ============================================================
+2026-03-23 16:58:02,618 - __main__ - INFO - WeChat-Kimi Bridge 启动
+2026-03-23 16:58:02,618 - __main__ - INFO - 策略: per_group
+2026-03-23 16:58:02,618 - __main__ - INFO - ============================================================
+2026-03-23 16:58:02,618 - __main__ - INFO - 登录中...
+2026-03-23 16:58:02,618 - __main__ - INFO - [Mock Bot] 模拟登录成功
+2026-03-23 16:58:02,618 - __main__ - INFO - 登录成功!
+2026-03-23 16:58:20,045 - __main__ - INFO - 新建会话: p:user_2
+2026-03-23 16:58:20,045 - __main__ - INFO - 启动 Kimi: kimi --wire -w . --continue --yolo
+2026-03-23 16:58:20,058 - __main__ - INFO - 新建会话: p:user_3
+2026-03-23 16:58:20,058 - __main__ - INFO - 启动 Kimi: kimi --wire -w . --continue --yolo
+2026-03-23 16:58:20,067 - __main__ - INFO - 新建会话: g:test_group
+2026-03-23 16:58:20,067 - __main__ - INFO - 启动 Kimi: kimi --wire -w . --continue --yolo
+2026-03-23 16:58:37,067 - __main__ - INFO - ============================================================
+2026-03-23 16:58:37,067 - __main__ - INFO - WeChat-Kimi Bridge 启动
+2026-03-23 16:58:37,067 - __main__ - INFO - 策略: per_group
+2026-03-23 16:58:37,067 - __main__ - INFO - ============================================================
+2026-03-23 16:58:37,067 - __main__ - INFO - 登录中...
+2026-03-23 16:58:37,067 - __main__ - INFO - 启动登录线程...
+2026-03-23 17:00:04,019 - __main__ - ERROR - 登录失败: [Errno 22] Invalid argument
+2026-03-23 17:00:04,020 - __main__ - ERROR - 登录失败
+2026-03-23 17:00:06,360 - __main__ - INFO - ============================================================
+2026-03-23 17:00:06,360 - __main__ - INFO - WeChat-Kimi Bridge 启动
+2026-03-23 17:00:06,360 - __main__ - INFO - 策略: per_group
+2026-03-23 17:00:06,360 - __main__ - INFO - ============================================================
+2026-03-23 17:00:06,360 - __main__ - INFO - 登录中...
+2026-03-23 17:00:06,360 - __main__ - INFO - 启动登录线程...
+2026-03-23 17:01:49,489 - __main__ - ERROR - 登录失败: Connection timeout to host https://ilinkai.weixin.qq.com/ilink/bot/get_bot_qrcode?bot_type=3
+2026-03-23 17:01:49,490 - __main__ - ERROR - 登录失败
+2026-03-23 17:03:27,849 - __main__ - INFO - ============================================================
+2026-03-23 17:03:27,849 - __main__ - INFO - WeChat-Kimi Bridge 启动
+2026-03-23 17:03:27,849 - __main__ - INFO - 策略: per_group
+2026-03-23 17:03:27,850 - __main__ - INFO - ============================================================
+2026-03-23 17:03:27,850 - __main__ - INFO - 登录中...
+2026-03-23 17:03:27,850 - __main__ - INFO - 启动登录线程...
+2026-03-23 17:08:28,484 - __main__ - ERROR - 登录失败: 
+2026-03-23 17:08:28,485 - __main__ - ERROR - 登录失败
+2026-03-23 17:14:21,841 - __main__ - INFO - ============================================================
+2026-03-23 17:14:21,841 - __main__ - INFO - WeChat-Kimi Bridge 启动
+2026-03-23 17:14:21,841 - __main__ - INFO - 策略: per_group
+2026-03-23 17:14:21,841 - __main__ - INFO - ============================================================
+2026-03-23 17:14:21,841 - __main__ - INFO - 登录中...
+2026-03-23 17:14:21,841 - __main__ - INFO - 启动登录线程...
+2026-03-23 17:16:04,528 - __main__ - ERROR - 登录失败: Cannot connect to host ilinkai.weixin.qq.com:443 ssl:default [信号灯超时时间已到]
+2026-03-23 17:16:04,529 - __main__ - ERROR - 登录失败
+2026-03-23 17:16:23,666 - __main__ - INFO - ============================================================
+2026-03-23 17:16:23,667 - __main__ - INFO - WeChat-Kimi Bridge 启动
+2026-03-23 17:16:23,669 - __main__ - INFO - 策略: per_group
+2026-03-23 17:16:23,670 - __main__ - INFO - ============================================================
+2026-03-23 17:16:23,670 - __main__ - INFO - 登录中...
+2026-03-23 17:16:23,670 - __main__ - INFO - 启动登录线程...
+2026-03-23 17:18:18,490 - __main__ - ERROR - 登录失败: Connection timeout to host https://ilinkai.weixin.qq.com/ilink/bot/get_bot_qrcode?bot_type=3
+2026-03-23 17:18:18,491 - __main__ - ERROR - 登录失败
+2026-03-23 17:19:10,787 - __main__ - INFO - ============================================================
+2026-03-23 17:19:10,787 - __main__ - INFO - WeChat-Kimi Bridge 启动
+2026-03-23 17:19:10,788 - __main__ - INFO - 策略: per_group
+2026-03-23 17:19:10,788 - __main__ - INFO - ============================================================
+2026-03-23 17:19:10,788 - __main__ - INFO - 登录中...
+2026-03-23 17:19:10,788 - __main__ - INFO - 启动登录线程...
