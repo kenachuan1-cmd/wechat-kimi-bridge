@@ -163,6 +163,16 @@ class WechatBridge:
 
 # ==================== HTTP 服务器 ====================
 
+async def handle_index(request):
+    """首页"""
+    return web.Response(text="""
+    <h1>WeChat Bridge</h1>
+    <p>微信桥接器运行中</p>
+    <ul>
+        <li><a href="/status">查看状态</a></li>
+    </ul>
+    """, content_type='text/html')
+
 async def handle_status(request):
     """状态接口"""
     return web.json_response({
@@ -181,6 +191,7 @@ async def main():
     
     # 启动 HTTP 服务器
     app = web.Application()
+    app.router.add_get('/', handle_index)
     app.router.add_get('/status', handle_status)
     
     runner = web.AppRunner(app)
