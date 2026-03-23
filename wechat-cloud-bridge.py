@@ -28,7 +28,6 @@ class WechatCloudBridge:
         self.bot = None
         self.messages = []  # 来自微信的消息
         self.responses = {}  # 本地返回的回复
-        self.clients = set()  # 本地客户端
         self.local_server_url = None  # 本地服务器地址
         
     async def init_wechat(self):
@@ -57,22 +56,6 @@ class WechatCloudBridge:
         except Exception as e:
             logger.error(f"初始化微信失败: {e}")
             return False
-    
-    async def poll_wechat_messages(self):
-        """轮询微信消息"""
-        if not self.bot:
-            return
-            
-        try:
-            # 这里需要根据实际的 weixin_bot API 调整
-            # 示例: 获取最新消息
-            messages = await self.bot.get_updates()
-            
-            for msg in messages:
-                await self.handle_wechat_message(msg)
-                
-        except Exception as e:
-            logger.error(f"轮询消息失败: {e}")
     
     async def handle_wechat_message(self, msg_data):
         """处理微信消息，转发到本地"""
@@ -187,7 +170,8 @@ async def main():
     runner = web.AppRunner(app)
     await runner.setup()
     
-    port = int(os.environ.get('PORT', 8080))
+    # 使用不同端口（避免冲突）
+    port = int(os.environ.get('PORT', 8081))
     site = web.TCPSite(runner, '0.0.0.0', port)
     
     logger.info(f"HTTP 服务器: http://0.0.0.0:{port}")
