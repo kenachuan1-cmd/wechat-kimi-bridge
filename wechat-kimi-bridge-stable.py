@@ -264,42 +264,64 @@ class WeixinBotSDKWrapper(BaseWeixinBot):
         except Exception as e:
             logger.error(f"解析消息失败: {e}")
     
-    def _parse_message(self, raw_msg: dict) -> Optional[WeChatMessage]:
+    def _parse_message(self, raw_msg) -> Optional[WeChatMessage]:
         """解析消息"""
         try:
-            msg_type_code = raw_msg.get('msg_type', 1)
+            # 处理对象或字典
+            if hasattr(raw_msg, 'msg_type'):
+                # 是对象
+                msg_type_code = getattr(raw_msg, 'msg_type', 1)
+                content = getattr(raw_msg, 'content', '')
+                at_list = getattr(raw_msg, 'at_list', [])
+                msg_id = getattr(raw_msg, 'msg_id', str(uuid.uuid4()))
+                from_user = getattr(raw_msg, 'from_user', None)
+                user_id = getattr(from_user, 'id', '') if from_user else ''
+                user_name = getattr(from_user, 'name', '') if from_user else ''
+                group_id = getattr(raw_msg, 'group_id', None)
+                is_group = getattr(raw_msg, 'is_group', False)
+                group_name = getattr(raw_msg, 'group_name', None)
+                image_url = getattr(raw_msg, 'image_url', None) or content if msg_type_code == 3 else None
+            else:
+                # 是字典
+                msg_type_code = raw_msg.get('msg_type', 1)
+                content = raw_msg.get('content', '')
+                at_list = raw_msg.get('at_list', [])
+                msg_id = raw_msg.get('msg_id', str(uuid.uuid4()))
+                from_user = raw_msg.get('from_user', {})
+                user_id = from_user.get('id', '') if from_user else ''
+                user_name = from_user.get('name', '') if from_user else ''
+                group_id = raw_msg.get('group_id')
+                is_group = raw_msg.get('is_group', False)
+                group_name = raw_msg.get('group_name')
+                image_url = raw_msg.get('image_url') or raw_msg.get('content') if msg_type_code == 3 else None
             
             msg_type = MessageType.TEXT
-            image_url = None
-            
             if msg_type_code == 3:
                 msg_type = MessageType.IMAGE
-                image_url = raw_msg.get('image_url') or raw_msg.get('content')
             elif msg_type_code == 34:
                 msg_type = MessageType.VOICE
             
             # 检查 @
             is_at_me = False
-            text = raw_msg.get('content', '')
-            at_list = raw_msg.get('at_list', [])
+            text = content
             
             if at_list:
-                is_at_me = any(self.bot_name in at for at in at_list)
+                is_at_me = any(self.bot_name in str(at) for at in at_list)
                 for at in at_list:
-                    text = text.replace(at, '').strip()
+                    text = text.replace(str(at), '').strip()
             
             if not is_at_me and text.startswith(f'@{self.bot_name}'):
                 is_at_me = True
                 text = text[len(f'@{self.bot_name}'):].strip()
             
             return WeChatMessage(
-                msg_id=str(raw_msg.get('msg_id', uuid.uuid4())),
-                user_id=raw_msg.get('from_user', {}).get('id', ''),
-                user_name=raw_msg.get('from_user', {}).get('name', ''),
+                msg_id=str(msg_id),
+                user_id=user_id,
+                user_name=user_name,
                 text=text,
                 msg_type=msg_type,
-                group_id=raw_msg.get('group_id') if raw_msg.get('is_group') else None,
-                group_name=raw_msg.get('group_name'),
+                group_id=group_id if is_group else None,
+                group_name=group_name,
                 is_at_me=is_at_me,
                 image_url=image_url
             )
