@@ -28,7 +28,7 @@ class WechatCloudBridge:
         self.bot = None
         self.messages = []  # 来自微信的消息
         self.responses = {}  # 本地返回的回复
-        self.local_server_url = None  # 本地服务器地址
+        self.local_server_url = "http://localhost:8766"  # 本地服务器地址
         
     async def init_wechat(self):
         """初始化微信连接"""

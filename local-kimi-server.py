@@ -117,7 +117,7 @@ class LocalKimiServer:
             "timestamp": datetime.now().isoformat()
         })
     
-    async def run(self, port=8765):
+    async def run(self, port=8766):
         """运行本地服务器"""
         logger.info("="*60)
         logger.info("  本地 Kimi 服务器启动")
