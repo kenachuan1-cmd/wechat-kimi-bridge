@@ -27,7 +27,8 @@ class LocalKimiServer:
         logger.info(f"调用 Kimi: {text[:50]}...")
         
         try:
-            cmd = ["kimi", "--no-interactive", "-c", text]
+            # 使用 kimi --print --yolo -c 实现非交互式调用
+cmd = ["kimi", "--print", "--yolo", "-c", text]
             
             result = subprocess.run(
                 cmd,
