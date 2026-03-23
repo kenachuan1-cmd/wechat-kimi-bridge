@@ -265,35 +265,49 @@ class WeixinBotSDKWrapper(BaseWeixinBot):
             logger.error(f"解析消息失败: {e}")
     
     def _parse_message(self, raw_msg) -> Optional[WeChatMessage]:
-        """解析消息"""
+        """解析消息 - 处理对象或字典"""
         try:
-            # 处理对象或字典
-            if hasattr(raw_msg, 'msg_type'):
-                # 是对象
+            # 判断是否为对象（IncomingMessage）
+            is_object = hasattr(raw_msg, '__dict__') or not isinstance(raw_msg, dict)
+            
+            if is_object:
+                # 是 IncomingMessage 对象
                 msg_type_code = getattr(raw_msg, 'msg_type', 1)
                 content = getattr(raw_msg, 'content', '')
                 at_list = getattr(raw_msg, 'at_list', [])
                 msg_id = getattr(raw_msg, 'msg_id', str(uuid.uuid4()))
+                
+                # from_user 也可能是对象
                 from_user = getattr(raw_msg, 'from_user', None)
-                user_id = getattr(from_user, 'id', '') if from_user else ''
-                user_name = getattr(from_user, 'name', '') if from_user else ''
+                if from_user and hasattr(from_user, '__dict__'):
+                    user_id = getattr(from_user, 'id', '')
+                    user_name = getattr(from_user, 'name', '')
+                elif from_user and isinstance(from_user, dict):
+                    user_id = from_user.get('id', '')
+                    user_name = from_user.get('name', '')
+                else:
+                    user_id = ''
+                    user_name = ''
+                
                 group_id = getattr(raw_msg, 'group_id', None)
                 is_group = getattr(raw_msg, 'is_group', False)
                 group_name = getattr(raw_msg, 'group_name', None)
-                image_url = getattr(raw_msg, 'image_url', None) or content if msg_type_code == 3 else None
+                image_url = getattr(raw_msg, 'image_url', None)
+                if not image_url and msg_type_code == 3:
+                    image_url = content
             else:
                 # 是字典
                 msg_type_code = raw_msg.get('msg_type', 1)
                 content = raw_msg.get('content', '')
                 at_list = raw_msg.get('at_list', [])
                 msg_id = raw_msg.get('msg_id', str(uuid.uuid4()))
-                from_user = raw_msg.get('from_user', {})
-                user_id = from_user.get('id', '') if from_user else ''
-                user_name = from_user.get('name', '') if from_user else ''
+                from_user = raw_msg.get('from_user', {}) or {}
+                user_id = from_user.get('id', '')
+                user_name = from_user.get('name', '')
                 group_id = raw_msg.get('group_id')
                 is_group = raw_msg.get('is_group', False)
                 group_name = raw_msg.get('group_name')
-                image_url = raw_msg.get('image_url') or raw_msg.get('content') if msg_type_code == 3 else None
+                image_url = raw_msg.get('image_url') or (content if msg_type_code == 3 else None)
             
             msg_type = MessageType.TEXT
             if msg_type_code == 3:
